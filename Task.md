@@ -15,6 +15,7 @@
         return []
 ### Explanation
     The twoSum function in the provided code is a Python method designed to find two numbers in an array nums that add up to a specified target. Let's break down how it works:
+
     class Solution(object):
     def twoSum(self, nums, target):
         hash_map = {}
@@ -25,6 +26,7 @@
             hash_map[num] = i
 
         return []
+
 
 
 
