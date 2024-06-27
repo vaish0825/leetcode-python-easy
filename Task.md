@@ -58,6 +58,8 @@ This algorithm has a time complexity of O(n), where n is the number of elements 
 
 ## Question 2
 ## Palindrome Number
+<img width="451" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/c0fe7313-d076-4d17-976e-754d0df812c8">
+
     
 
 
