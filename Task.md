@@ -7,12 +7,13 @@
     def twoSum(self, nums, target):
         hash_map = {}
         
-        for i,num in enumerate(nums):
+        for i, num in enumerate(nums):
             if target - num in hash_map:
-               return [hash_map[target-num],i]
+               return [hash_map[target-num], i]
             hash_map[num] = i
 
         return []
+
 ### Explanation
 The `twoSum` function in the provided code is a Python method designed to find two numbers in an array `nums` that add up to a specified `target`. Let's break down how it works:
 
