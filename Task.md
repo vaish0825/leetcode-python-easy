@@ -78,7 +78,7 @@ This algorithm has a time complexity of O(n), where n is the number of elements 
             right -= 1
         
         return True
-## Explaination
+## Explanation
 
 
 
