@@ -60,8 +60,22 @@ This algorithm has a time complexity of O(n), where n is the number of elements 
 ## Palindrome Number
 <img width="451" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/c0fe7313-d076-4d17-976e-754d0df812c8">
 
-    
+## Answer
+   class Solution(object):
+    def isPalindrome(self, x):
+        s = str(x)
+        left, right = 0, len(s) - 1
+        while left <= right:
+            if s[left] != s[right]:
+                return False
+            left += 1
+            right -= 1
+         return True
 
+
+   
+        
+       
 
 
 
