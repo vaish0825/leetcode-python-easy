@@ -55,6 +55,8 @@ For `nums = [2, 7, 11, 15]` and `target = 9`:
 
 This algorithm has a time complexity of O(n), where n is the number of elements in `nums`, because each lookup and insertion operation in a dictionary (hash map) is average O(1). Therefore, the overall complexity is dominated by the single loop through `nums`.
 
+## Question 2
+## Palindrome Number
     
 
 
