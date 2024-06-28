@@ -152,6 +152,8 @@ This approach efficiently determines if `x` is a palindrome using string manipul
 ## Question 3
 ## Roman Integer
 <img width="443" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/2795966b-c023-42f7-9166-542049b22200">
+<img width="436" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/4bceea17-f49d-4c0a-acde-edc9a4588dd8">
+
 
 
 
