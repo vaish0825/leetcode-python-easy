@@ -155,37 +155,4 @@ This approach efficiently determines if `x` is a palindrome using string manipul
 <img width="436" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/4bceea17-f49d-4c0a-acde-edc9a4588dd8">
 <img width="382" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/ba18d2ed-a559-407a-acdd-3596d6eac6db">
 ## Answer
-   class Solution(object):
-    def romanToInt(self, s):
-        """
-        :type s: str
-        :rtype: int
-        """
-        symbol_hash = {
-            'I': 1,
-            'IV': 4,
-            'V': 5,
-            'IX': 9,
-            'X': 10,
-            'XL': 40,
-            'L': 50,
-            'XC': 90,
-            'C': 100,
-            'CD': 400,
-            'D': 500,
-            'CM': 900,
-            'M': 1000,
-        }
-
-        integer = 0
-        i = 0
-        while i < len(s):
-            two_val = symbol_hash.get(s[i:i + 2])
-            if two_val:
-                integer += two_val
-                i += 2
-            else:
-                integer += symbol_hash[s[i]]
-                i += 1
-        return integer
-
+   
