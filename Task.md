@@ -156,6 +156,81 @@ This approach efficiently determines if `x` is a palindrome using string manipul
 <img width="382" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/ba18d2ed-a559-407a-acdd-3596d6eac6db">
 
 ## Explanation
+   The provided `Solution` class is a Python implementation of a function `romanToInt` that converts a Roman numeral string `s` into its corresponding integer value. Let's break down the code and ensure clarity on how it works:
+
+### Explanation of the Code:
+
+1. **Symbol Hash**:
+   - `symbol_hash` is a dictionary that maps Roman numeral symbols and their combinations to their respective integer values. This includes mappings like `'I'` to `1`, `'IV'` to `4`, `'V'` to `5`, etc. This allows us to efficiently look up the value of Roman numeral combinations during the conversion process.
+
+2. **Initialization**:
+   - `integer` is initialized to `0`. This variable will accumulate the total integer value of the Roman numeral string.
+   - `i` is initialized to `0`, which will be used as an index to traverse through the string `s`.
+
+3. **Conversion Loop**:
+   - The `while` loop continues as long as `i` is less than the length of `s`.
+   - Inside the loop:
+     - `two_val = symbol_hash.get(s[i:i + 2])`: Attempts to retrieve the value from `symbol_hash` corresponding to the substring of length 2 starting from index `i`. This checks for cases like `'IV'`, `'IX'`, etc.
+     - If `two_val` is not `None` (meaning the substring exists in `symbol_hash`):
+       - Add `two_val` to `integer`.
+       - Increment `i` by 2 to move past the two-character Roman numeral substring.
+     - If `two_val` is `None` (the substring doesn't exist in `symbol_hash`):
+       - Add the value of `s[i]` (which represents a single Roman numeral character) to `integer`.
+       - Increment `i` by 1 to move to the next character in `s`.
+
+4. **Return**:
+   - Once the loop completes (when `i` is equal to or exceeds the length of `s`), `integer` contains the total integer value corresponding to the Roman numeral string `s`. Return this value as the result of the function.
+
+### Example Usage:
+
+Here's how you would use the `Solution` class:
+
+```python
+class Solution(object):
+    def romanToInt(self, s):
+        symbol_hash = {
+            'I': 1,
+            'IV': 4,
+            'V': 5,
+            'IX': 9,
+            'X': 10,
+            'XL': 40,
+            'L': 50,
+            'XC': 90,
+            'C': 100,
+            'CD': 400,
+            'D': 500,
+            'CM': 900,
+            'M': 1000,
+        }
+
+        integer = 0
+        i = 0
+        while i < len(s):
+            two_val = symbol_hash.get(s[i:i + 2])
+            if two_val:
+                integer += two_val
+                i += 2
+            else:
+                integer += symbol_hash[s[i]]
+                i += 1
+        return integer
+
+# Example usage:
+solution = Solution()
+print(solution.romanToInt("III"))       # Output: 3
+print(solution.romanToInt("LVIII"))     # Output: 58
+print(solution.romanToInt("MCMXCIV"))   # Output: 1994
+```
+
+### Summary:
+
+This implementation efficiently converts valid Roman numeral strings into their corresponding integer values using a dictionary for quick lookups of numeral combinations. It follows the rules of Roman numeral representation where smaller numerals preceding larger ones denote subtraction. The function handles the input string `s` correctly and returns the expected integer values for various Roman numeral examples provided.
+   
+   
+   
+   
+   
    
 
 
