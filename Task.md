@@ -231,7 +231,81 @@ This implementation efficiently converts valid Roman numeral strings into their 
 <img width="427" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/49477f97-be4d-4300-aa86-9a3713c8675f">
 
 ## Answer
+class Solution(object):
+    def longestCommonPrefix(self, strs):
+        res = ""
 
+        for i in range(len(strs[0])):
+            for s in strs:
+                if i == len(s) or s[i] != strs[0][i]:
+                    return res
+            res += strs[0][i]
+        return res     
+## Explanation 
+   To find the longest common prefix among an array of strings, we can use a simple and efficient approach where we compare characters of the strings from the first position onwards. Here's how we can implement it in Python:
+
+### Approach:
+
+1. **Edge Case Handling**: If the input array `strs` is empty, return an empty string `""`.
+
+2. **Initialization**: Start with the first string in the array as the initial candidate for the longest common prefix.
+
+3. **Iterate and Compare**: Iterate through the characters of the first string (`strs[0]`). For each character position, compare it with the corresponding character positions of the other strings (`strs[1]`, `strs[2]`, ...).
+
+4. **Update Longest Prefix**: Maintain an index (`j`) that tracks the current position in the strings being compared. Continue until a mismatch is found or the end of any string is reached.
+
+5. **Output**: After iterating through all strings, the substring of the first string up to index `j` is the longest common prefix.
+
+6. **Early Termination**: If at any point during the iteration a mismatch is found (i.e., characters are not equal), return the substring of the first string up to the current index `j`.
+
+### Implementation:
+
+Here is the Python function implementing the above approach:
+
+```python
+def longestCommonPrefix(strs):
+    if not strs:
+        return ""
+    
+    # Start with the first string as the initial longest common prefix
+    prefix = strs[0]
+    
+    for i in range(1, len(strs)):
+        current_string = strs[i]
+        j = 0
+        # Compare characters until a mismatch is found or end of any string is reached
+        while j < len(prefix) and j < len(current_string) and prefix[j] == current_string[j]:
+            j += 1
+        prefix = prefix[:j]  # Update prefix to be the common prefix found so far
+        
+        # If prefix becomes empty, no common prefix exists
+        if prefix == "":
+            return ""
+    
+    return prefix
+
+# Example usage:
+strs1 = ["flower", "flow", "flight"]
+strs2 = ["dog", "racecar", "car"]
+
+print(longestCommonPrefix(strs1))  # Output: "fl"
+print(longestCommonPrefix(strs2))  # Output: ""
+```
+
+### Explanation:
+
+- **Initialization**: We start with the first string "flower" as `prefix`.
+
+- **Comparison Loop**: For each subsequent string (`flow` and `flight`), we compare characters from the start (`f`, then `fl`, then `flo`, and finally `fl` is common).
+
+- **Early Termination**: If at any point during the iteration, `prefix` becomes empty (i.e., no common prefix found), we return an empty string immediately.
+
+- **Complexity**: The algorithm runs in O(S) time complexity, where S is the total number of characters in all strings. This is because in the worst case, each character of each string needs to be compared exactly once.
+
+This solution efficiently finds the longest common prefix among an array of strings while adhering to the given constraints. It handles edge cases such as empty input arrays and strings with varying lengths gracefully.
+
+
+    
    
    
    
