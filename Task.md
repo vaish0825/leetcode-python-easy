@@ -226,6 +226,7 @@ print(solution.romanToInt("MCMXCIV"))   # Output: 1994
 ### Summary:
 
 This implementation efficiently converts valid Roman numeral strings into their corresponding integer values using a dictionary for quick lookups of numeral combinations. It follows the rules of Roman numeral representation where smaller numerals preceding larger ones denote subtraction. The function handles the input string `s` correctly and returns the expected integer values for various Roman numeral examples provided.
+## Question 4
    
    
    
