@@ -228,6 +228,8 @@ print(solution.romanToInt("MCMXCIV"))   # Output: 1994
 This implementation efficiently converts valid Roman numeral strings into their corresponding integer values using a dictionary for quick lookups of numeral combinations. It follows the rules of Roman numeral representation where smaller numerals preceding larger ones denote subtraction. The function handles the input string `s` correctly and returns the expected integer values for various Roman numeral examples provided.
 ## Question 4
 ## Longest Common Prefix
+<img width="427" alt="image" src="https://github.com/vaish0825/leetcode-python-easy/assets/171915053/49477f97-be4d-4300-aa86-9a3713c8675f">
+
    
    
    
